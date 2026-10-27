@@ -22,26 +22,36 @@
 3. Появится запрос от системы контроля учетных записей UAC. Нажмите "Да".
 4. Скрипт пропишет меню в реестр. 
 
+![Запуск установщика](images/install.png)
+
 Важно: в Windows 11 новый пункт находится в подменю "Показать дополнительные параметры", так как Microsoft скрывает сторонние расширения в основном меню.
 
 ## Использование
 
 1. Скачайте демку с Faceit (файл с расширением `.zst`).
 2. Нажмите на него правой кнопкой мыши.
-3. Выберите "Показать дополнительные параметры" или зажмите Shift при клике правой кнопкой.
+3. Выберите "Показать дополнительные параметры".
+
+![Меню в проводнике](images/menu.png)
+
 4. Нажмите "Переместить демку в CS2".
 5. Введите желаемое название без расширения `.dem`.
-6. Скрипт скопирует файл в CS2 и покажет команду. Введите её в консоли игры, которая открывается клавишей тильда.
+
+![Ввод названия демки](images/input.png)
+
+6. Скрипт скопирует файл в CS2 и покажет команду. Введите её в консоли игры.
+
+![Готовая команда](images/copy.png)
 
 ## Удаление
 
 Если нужно убрать пункт из контекстного меню:
+
 1. Запустите файл `RemoveMenu.bat`.
 2. Нажмите "Да" в окне UAC.
-3. Меню будет удалено. Файл `MoveDemoToCS2.ps1` останется на месте.
+3. Меню будет удалено.
 
-## Как это работает
-Скрипт `AddMenu.bat` использует встроенный API PowerShell для записи команды в реестр Windows без искажений кодировки. При клике вызывается `MoveDemoToCS2.ps1`, который использует 7-Zip для распаковки и копирует файл в директорию Steam.
+![Удаление меню](images/uninstall.png)
 
 ---
 
@@ -69,23 +79,33 @@ A Windows script that adds a "Move demo to CS2" option to the Explorer context m
 3. A User Account Control UAC prompt will appear. Click "Yes".
 4. The script will register the menu in the Windows registry.
 
+![Run installer](images/install.png)
+
 Note: In Windows 11, the new item is located in the "Show more options" submenu, as Microsoft hides third-party extensions in the main menu.
 
 ## Usage
 
 1. Download a demo from Faceit (a file with the `.zst` extension).
 2. Right-click on it.
-3. Select "Show more options" or hold Shift while right-clicking.
+3. Select "Show more options".
+
+![Context menu](images/menu.png)
+
 4. Click "Move demo to CS2".
 5. Enter the desired name without the `.dem` extension.
-6. The script will copy the file to CS2 and show a command. Enter it in the game console, which opens with the tilde key.
+
+![Enter demo name](images/input.png)
+
+6. The script will copy the file to CS2 and show a command. Enter it in the game console.
+
+![Command ready](images/copy.png)
 
 ## Uninstallation
 
 If you need to remove the item from the context menu:
+
 1. Run the `RemoveMenu.bat` file.
 2. Click "Yes" in the UAC window.
-3. The menu will be removed. The `MoveDemoToCS2.ps1` file will remain in place.
+3. The menu will be removed.
 
-## How it works
-The `AddMenu.bat` script uses the built-in PowerShell API to write the command to the Windows registry without encoding corruption. When clicked, it calls `MoveDemoToCS2.ps1`, which uses 7-Zip to extract the archive and copies the file to the Steam directory.
+![Uninstall menu](images/uninstall.png)
